@@ -5,3 +5,4 @@ Primer paso:
 Cuando tengan acceso al repo, agregar su nombre a la lista
 
 David Gonzalez
+Guillermo Antun
