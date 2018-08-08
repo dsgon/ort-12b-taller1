@@ -1,4 +1,4 @@
-package Ejercicio1;
+package ar.edu.ort.taller.Ejercicio1;
 
 public class Integrante {
 	private String nombre;
