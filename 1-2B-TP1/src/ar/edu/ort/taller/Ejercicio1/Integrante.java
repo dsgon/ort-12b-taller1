@@ -4,6 +4,10 @@ public class Integrante {
 	private String nombre;
 	
 	
+	public Integrante() {
+	}
+	
+	
 	public Integrante(String nombre) {
 		this.nombre = nombre;
 	}
