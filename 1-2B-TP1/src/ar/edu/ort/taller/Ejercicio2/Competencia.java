@@ -1,4 +1,4 @@
-package ar.edu.ort.taller.Ejercicio3;
+package ar.edu.ort.taller.Ejercicio2;
 
 import java.util.ArrayList;
 
