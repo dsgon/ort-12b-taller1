@@ -57,3 +57,25 @@ Elimina todos los elementos de la lista de integrantes.
 Desde el main() :
 * Creá una instancia de Grupo asignándole el número, la letra o el nombre que le
 hayan puesto.
+
+* Agregale los miembros reales de tu grupo de trabajos prácticos. Agregale uno
+más, ficticio. Cada vez que agregues un integrante el programa debe mostrar el
+mensaje “[nombreIntegrante] fue asignado al grupo [nombreGrupo]”, donde
+[nombreIntegrante] y [nombreGrupo] son, respectivamente, los nombres del
+nuevo integrante y del grupo.
+
+* Escribí un método del programa principal que compruebe si un integrante
+determinado fue o no agregado al grupo. Probalo tanto con uno que exista
+como con uno que no.
+
+* Mostrá todos los datos del grupo.
+
+* Remové al integrante ficticio para que el grupo quede con los integrantes
+reales. Luego de removerlo de la lista, mostrá los datos del integrante
+removido.
+
+* Volvé a remover el mismo integrante ficticio.
+
+* Mostrá de nuevo los datos del grupo, actualizados.
+
+* Vaciá el grupo y volvé a mostrarlo.
