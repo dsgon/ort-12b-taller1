@@ -31,7 +31,7 @@ public class Anio {
 				result += this.cantidadDiasMes[i];
 			}
 		} else if((numeroMes>1)&&(numeroMes<=12)){
-			for (int i=0; i<=numeroMes-1; i++) {
+			for (int i=0; i<numeroMes-1; i++) {
 				result += this.cantidadDiasMes[i];
 			}
 		}
