@@ -20,5 +20,16 @@ public class Anio {
 		}
 		return result;
 	}
+	
+	public int diasTranscurridos(int numeroMes){
+		int[] cantidadDiasMes = {31,28,31,30,31,30,31,31,30,31,30,31}; 
+		int result = 0;
+		
+		for (int i=0; i<=numeroMes-1; i++) {
+			result += cantidadDiasMes[i];
+		}
+		
+		return result;
+	}
 
 }
