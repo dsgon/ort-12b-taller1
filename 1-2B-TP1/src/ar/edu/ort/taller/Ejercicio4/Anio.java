@@ -10,5 +10,15 @@ public class Anio {
 	}
 	
 	public String[] getMeses() { return this.meses; }
+	
+	public String getNombreMes(int numeroMes) {
+		String result;
+		if((numeroMes<0)&&(numeroMes>12)){
+			result = this.meses[numeroMes-1];
+		} else {
+			result = "Mes inexistente. Por favor verifique";
+		}
+		return result;
+	}
 
 }
