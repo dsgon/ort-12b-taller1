@@ -58,6 +58,13 @@ public class Grupo {
 		return -1;
 	}
 	
+	public String obtenerIntegrante(int posicion) {
+		if (posicion > listaIntegrantes.size())
+			return listaIntegrantes.get(posicion).getNombre();
+		else
+			return null;
+	}
+	
 	public String buscarIntegrante(String nombre) {
 		for (int i = 0; i < listaIntegrantes.size(); i++) {
 			if(listaIntegrantes.get(i).getNombre().equals(nombre)) {
