@@ -1,6 +1,6 @@
 package ar.edu.ort.taller.Ejercicio3;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -36,6 +36,15 @@ public class Test {
 		for (Atleta ganadores : carrera1.getGanadores()) {
 			System.out.println(ganadores.toString());
 		}
+		
+		System.out.println();
+		ArrayList<Atleta> ganadores1 = carrera1.getTernaGanadores();
+		
+		System.out.println("Terna de ganadores");
+		for (int i = 0; i < ganadores1.size(); i++) {
+			System.out.println("El atleta: " + ganadores1.get(i).getNombre() + " termino la competencia con tiempo: " + ganadores1.get(i).getTiempo() + " y obtuvo el puesto numero: " + (i+1));
+		}
+		
 		System.out.println();
 		System.out.println("  ********************************************  ");
 		
@@ -66,19 +75,21 @@ public class Test {
 			System.out.println(participantes.toString());
 		}
 		System.out.println();
-		System.out.println("  ********************************************  ");
 
 		System.out.println("Atletas ganadores: ");
 		for (Atleta ganadores : carrera2.getGanadores()) {
 			System.out.println(ganadores.toString());
 		}
-		ArrayList<Atleta> ganadores = carrera2.getTernaGanadores();
 		
+		System.out.println();
+		ArrayList<Atleta> ganadores2 = carrera2.getTernaGanadores();
 		
-		for (int i = 0; i < ganadores.size(); i++) {
-			System.out.println("El atleta: " + ganadores.get(i).getNombre() + " termino la competencia con tiempo: " + ganadores.get(i).getTiempo() + " y obtuvo el puesto numero: " + (i+1));
+		System.out.println("Terna de ganadores");
+		for (int i = 0; i < ganadores2.size(); i++) {
+			System.out.println("El atleta: " + ganadores2.get(i).getNombre() + " termino la competencia con tiempo: " + ganadores2.get(i).getTiempo() + " y obtuvo el puesto numero: " + (i+1));
 		}
-		
+		System.out.println();
+		System.out.println("  ********************************************  ");
 
 	}
 
