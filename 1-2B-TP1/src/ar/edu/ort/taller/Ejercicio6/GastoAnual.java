@@ -95,7 +95,7 @@ public class GastoAnual {
 	
 	public void informarPromedioMensualPorRubro(){
 		//TODO: consultar por estafuncion
-		// Quedamos con uriel en devolver el promedio anual por mes de cada rubro.
+		// Quedamos con Uriel en devolver el promedio anual por mes de cada rubro.
 			double acumulador=0 , promedio=0;
 			for (int j=0; j<this.rubros.size(); j++){
 				for (MES mes : MES.values()) {
@@ -108,8 +108,30 @@ public class GastoAnual {
 		}
 		
 	
-	
 	public void informarMesMayorConsumo(){
-		
+		ArrayList<Double> listMax = new ArrayList<Double>();
+		ArrayList<String> listRubroMax = new ArrayList<String>();
+		ArrayList<MES> listMesMax = new ArrayList<MES>();
+		Double max = 0.0;
+		int posMax = 0;
+		MES mesMax = MES.ENERO;
+		for (int j=0; j<this.rubros.size(); j++){
+			for (MES mes : MES.values()) {
+				if(max < this.rubros.get(j).getTotalGastos(mes) ) {
+					max = this.rubros.get(j).getTotalGastos(mes);
+					posMax = j;
+					mesMax = mes;
+				}
+			}
+			max = 0.0;
+			listMax.add(this.rubros.get(posMax).getTotalGastos(mesMax));
+			listRubroMax.add(this.rubros.get(posMax).getNombre());
+			listMesMax.add(mesMax);
+
+		}
+		System.out.println("Mes maximo por cada rubro:");
+		for (int i = 0; i < listMax.size(); i++) {
+			System.out.println("El rubro: " + listRubroMax.get(i) + " gasto: " + listMax.get(i) + " en el mes: " + listMesMax.get(i));
+		}
 	}
 }

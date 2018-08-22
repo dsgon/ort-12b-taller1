@@ -33,7 +33,7 @@ public class Test {
 		
 		System.out.println();
 		gastoAnual.informarPromedioMensualPorRubro();
-
+		gastoAnual.informarMesMayorConsumo();
 	}
 
 }
