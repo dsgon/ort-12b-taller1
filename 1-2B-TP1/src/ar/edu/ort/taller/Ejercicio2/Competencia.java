@@ -12,9 +12,13 @@ public class Competencia {
 		this.atletasConcursantes = new ArrayList<Atleta>();
 	}
 	
-	public String getNombre(){ return this.nombre; }
+	public String getNombre(){ 
+		return this.nombre; 
+	}
 	
-	public ArrayList<Atleta> getAtletasConcursantes(){ return this.atletasConcursantes; }
+	public ArrayList<Atleta> getAtletasConcursantes(){ 
+		return this.atletasConcursantes; 
+	}
 	
 	public void agregarParticipantes(Atleta atletaParticipante){
 		this.atletasConcursantes.add(atletaParticipante);
@@ -25,9 +29,10 @@ public class Competencia {
 		double mejorTiempo = atletasConcursantes.get(0).getTiempo();
 		
 		for (Atleta atleta : atletasConcursantes) {
-			if (atleta.getTiempo()<mejorTiempo){
+			if (atleta.getTiempo()> mejorTiempo){
 				ganadores.clear();
 				ganadores.add(atleta);
+				mejorTiempo = atleta.getTiempo();
 			} else if(atleta.getTiempo()==mejorTiempo){
 				ganadores.add(atleta);
 			}
