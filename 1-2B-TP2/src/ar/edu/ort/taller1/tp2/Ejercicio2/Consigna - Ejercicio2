@@ -1,0 +1,16 @@
+A partir de las clases codificadas del ejercicio anterior:
+* Crear la clase Vendedor, la cual heredará de SubContratado.
+Deberá tener un atributo float porcentaje, el método toString() y
+calcularPago(). Cobrará de manera similar que cualquier otro
+subcontratado, salvo que además del jornal cobrará un porcentaje
+extra aplicado al importe de las ventas realizadas en el mes.
+* (precioHora * cantHoras ) * 1.porcentaje
+* Crear la clase TP2Test2.java que cree dos vendedores usando el
+constructor parametrizado obligatoriamente con los siguientes
+datos:
+< Ver Archivo PDF >
+
+Mostrar la clase, el nombre y el sueldo percibido de cada vendedor.
+La salida será:
+Vendedor 1 Pedro gana:21000.0
+Vendedor 2 Maria gana:22000.0

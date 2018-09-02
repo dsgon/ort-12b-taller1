@@ -1,0 +1,30 @@
+Ejercicio 1
+Supóngase que una empresa tiene dos tipos de empleados:
+Asalariado: cobra un importe fijo por mes.
+Subcontratado: quien cobra por horas.
+Hacer una función llamada calcularPago(), la cual deberá calcular el
+importe que hay que pagar cada mes a cada empleado, dependiendo de
+su tipo.
+Se puede pensar en una jerarquía de empleados.
+Los principios de esta jerarquía son los siguientes:
+Todos son Empleados.
+Los Asalariados cobran por mes.
+Los Subcontratados cobran por hora trabajada.
+
+* Indicar en el código fuente cuales métodos extienden el comportamiento de la superclase y cuales
+métodos especializan el comportamiento de la superclase.
+* Crear la clase TP2Test1.java tal que cree dos empleados usando el constructor parametrizado
+obligatoriamente :
+Un Asalariado de nombre "Jose" edad 30 gana 10000
+Un SubContratado de nombre "Carlos" edad 23 quien trabajará 50 horas al mes a un precio de 100 cada una.
+* Mostrar la clase, el nombre y el sueldo percibido de cada empleado.
+La salida será:
+Asalariado Jose gana:10000.0
+SubContratado Carlos gana:5000.0
+Recuérdese que cada una de las clases derivadas hereda todos los miembros de la super clase correspondiente.
+* Las clases SubContratado y Empleado heredan los miembros de la clase Empleado.
+* La subclase no puede acceder directamente a las variables miembro privadas de la superclase: hay que
+utilizar las funciones públicas de la super clase.
+* Una subclase puede redefinir (definir una función diferente con el mismo nombre) alguna de las
+funciones miembro de la superclase.
+* La función redefinida es utilizable directamente en la subclase.
