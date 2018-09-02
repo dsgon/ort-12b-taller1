@@ -28,23 +28,23 @@ public class Grupo {
 	public void agregarIntegrante(String nombreIntegrante) {
 		boolean agregado = false;
 		if (listaIntegrantes.size() == 0) {
-		Integrante integrante = new Integrante(nombreIntegrante);
-		listaIntegrantes.add(integrante);
-		cantidad++;
+			Integrante integrante = new Integrante(nombreIntegrante);
+			listaIntegrantes.add(integrante);
+			cantidad++;
+			System.out.println("Se agrego "+ integrante.getNombre() + " al grupo: " + getNombre());
 		}
 		else
 		{
+			for (int i = 0; i < listaIntegrantes.size(); i++) {
+				if(listaIntegrantes.get(i).getNombre().equals(nombreIntegrante)) {
+					agregado = true;
+				}
+			}
 			if(!agregado) {
-				for (int i = 0; i < listaIntegrantes.size(); i++) {
-					if(listaIntegrantes.get(i).getNombre().equals(nombreIntegrante)) {
-						agregado = true;
-					}
-				}
-				if(!agregado) {
-					Integrante integrante = new Integrante(nombreIntegrante);
-					listaIntegrantes.add(integrante);
-					cantidad++;
-				}
+				Integrante integrante = new Integrante(nombreIntegrante);
+				listaIntegrantes.add(integrante);
+				cantidad++;
+				System.out.println("Se agrego "+ integrante.getNombre() + " al grupo: " + getNombre());
 			}
 		}		
 	}
@@ -59,8 +59,8 @@ public class Grupo {
 	}
 	
 	public String obtenerIntegrante(int posicion) {
-		if (posicion > listaIntegrantes.size())
-			return listaIntegrantes.get(posicion).getNombre();
+		if (posicion < listaIntegrantes.size()&& posicion>=1)
+			return listaIntegrantes.get(posicion-1).getNombre();
 		else
 			return null;
 	}
@@ -99,7 +99,7 @@ public class Grupo {
 	
 	public void mostrar() {
 		if (listaIntegrantes.size() > 0) {
-			System.out.println("El Grupo: " + this.nombre + " tiene ");
+			System.out.print("El Grupo: " + this.nombre + " tiene ");
 			mostrarIntegrantes();
 		}else {
 			System.out.println("No hay integrantes.");
