@@ -14,6 +14,7 @@ public class Test {
 		Atleta atleta3 = new Atleta("Carlos", 9.80);
 		Atleta atleta4 = new Atleta("Daniel", 10.01);
 		Atleta atleta5 = new Atleta("Esteban", 9.97);
+		Atleta atleta11 = new Atleta("Mariana", 10.01);
 		
 		// Agrego los atletas a la competencia
 		carrera1.agregarParticipantes(atleta1);
@@ -21,6 +22,7 @@ public class Test {
 		carrera1.agregarParticipantes(atleta3);
 		carrera1.agregarParticipantes(atleta4);
 		carrera1.agregarParticipantes(atleta5);
+		carrera1.agregarParticipantes(atleta11);
 		
 		System.out.println("Competencia #1");
 		System.out.println();

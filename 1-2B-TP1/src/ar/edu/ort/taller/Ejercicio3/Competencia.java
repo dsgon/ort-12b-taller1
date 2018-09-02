@@ -25,7 +25,7 @@ public class Competencia {
 		double mejorTiempo = atletasConcursantes.get(0).getTiempo();
 		
 		for (Atleta atleta : atletasConcursantes) {
-			if (atleta.getTiempo()<mejorTiempo){
+			if (atleta.getTiempo()>mejorTiempo){
 				ganadores.clear();
 				ganadores.add(atleta);
 			} else if(atleta.getTiempo()==mejorTiempo){
@@ -42,7 +42,7 @@ public class Competencia {
 				for (int i = 0; i < (atletasConcursantes.size() - 1); i++) {
 					min = i;
 					for (int j = (i+1); j < atletasConcursantes.size(); j++) {
-						if (atletasConcursantes.get(j).getTiempo() < atletasConcursantes.get(min).getTiempo()) {
+						if (atletasConcursantes.get(j).getTiempo() > atletasConcursantes.get(min).getTiempo()) {
 							min = j;
 						}
 					}
