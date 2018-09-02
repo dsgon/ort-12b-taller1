@@ -6,8 +6,8 @@ import ar.edu.ort.taller.Ejercicio2.Competencia;
 public class Test {
 
 	public static void main(String[] args) {
-		
-		// Creo una nueeva competencia
+		/* Competencia 1 */
+		// Creo una nueva competencia
 		Competencia carrera1 = new Competencia("100 mts");
 		
 		// Creo atletas
@@ -42,16 +42,12 @@ public class Test {
 		System.out.println("  ********************************************  ");
 		
 		/* Competencia 2 */
-		System.out.println("Competencia #2");
-		System.out.println();
-		System.out.println("Participantes");
-		
 		// Creo una nueeva competencia
 		Competencia carrera2 = new Competencia("100 mts");
 
 		// Creo atletas
 		Atleta atleta6 = new Atleta("Francisco", 9.79);
-		Atleta atleta7 = new Atleta("Gabriel", 9.80);
+		Atleta atleta7 = new Atleta("Gabriel", 9.85);
 		Atleta atleta8 = new Atleta("Hector", 9.79);
 		Atleta atleta9 = new Atleta("Ignacio", 9.81);
 		Atleta atleta10 = new Atleta("Javier", 9.85);
@@ -62,13 +58,16 @@ public class Test {
 		carrera2.agregarParticipantes(atleta8);
 		carrera2.agregarParticipantes(atleta9);
 		carrera2.agregarParticipantes(atleta10);
-
+		
+		System.out.println("Competencia #2");
+		System.out.println();
+		System.out.println("Participantes");
 		//Muestro los atletas que participan en la competencia
 		for (Atleta participantes : carrera2.getAtletasConcursantes()) {
 			System.out.println(participantes.toString());
 		}
+		
 		System.out.println();
-		System.out.println("  ********************************************  ");
 
 		System.out.println("Atletas ganadores: ");
 		for (Atleta ganadores : carrera2.getGanadores()) {
