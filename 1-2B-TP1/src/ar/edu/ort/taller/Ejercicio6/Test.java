@@ -19,9 +19,6 @@ public class Test {
 		gastoAnual.agregarGasto(MES.NOVIEMBRE, "administracion", 1000);
 		gastoAnual.agregarGasto(MES.DICIEMBRE, "comercial", 400);
 		
-		//System.out.println(gastoAnual.gastoAcumulado(MES.FEBRERO));
-		//System.out.println();
-		
 		System.out.println("Gasto del rubro tecnico: "+gastoAnual.gastoAcumulado("tecnico"));
 		System.out.println("Gasto del rubro administracion: "+gastoAnual.gastoAcumulado("administracion"));
 		System.out.println("Gasto del rubro comercial: "+gastoAnual.gastoAcumulado("comercial"));
@@ -31,8 +28,9 @@ public class Test {
 		System.out.println();
 		gastoAnual.informarConsumosPorMes();
 		
-		System.out.println();
 		gastoAnual.informarPromedioMensualPorRubro();
+		
+		System.out.println();
 		gastoAnual.informarMesMayorConsumo();
 	}
 

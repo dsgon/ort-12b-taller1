@@ -94,7 +94,6 @@ public class GastoAnual {
 	}
 	
 	public void informarPromedioMensualPorRubro(){
-		//TODO: consultar por estafuncion
 		// Quedamos con Uriel en devolver el promedio anual por mes de cada rubro.
 			double acumulador=0 , promedio=0;
 			for (int j=0; j<this.rubros.size(); j++){
@@ -103,7 +102,6 @@ public class GastoAnual {
 				}
 				promedio=acumulador/MES.values().length;
 				System.out.println("El promedio anual de: "+ this.rubros.get(j).getNombre() + " es de: "+promedio);
-				System.out.println();
 			}
 		}
 		
