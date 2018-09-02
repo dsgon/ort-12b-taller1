@@ -51,8 +51,11 @@ public class Competencia {
 					atletasConcursantes.set(min, currentAtleta);
 					
 				}
-				for (int k = 0; k < 3; k++) { // 
-					ternaGanadora.add(atletasConcursantes.get(k));
+				ternaGanadora.add(atletasConcursantes.get(0));
+				for (int k = 1; k < atletasConcursantes.size(); k++) {
+					if(atletasConcursantes.get(k).getTiempo()!=atletasConcursantes.get(k-1).getTiempo()){
+						ternaGanadora.add(atletasConcursantes.get(k));
+					}
 				}
 			}
 			return ternaGanadora;

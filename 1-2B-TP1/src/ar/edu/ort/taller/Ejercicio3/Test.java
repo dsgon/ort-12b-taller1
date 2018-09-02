@@ -60,10 +60,12 @@ public class Test {
 
 		// Creo atletas
 		Atleta atleta6 = new Atleta("Francisco", 9.79);
-		Atleta atleta7 = new Atleta("Gabriel", 9.80);
+		Atleta atleta7 = new Atleta("Gabriel", 9.81);
 		Atleta atleta8 = new Atleta("Hector", 9.79);
 		Atleta atleta9 = new Atleta("Ignacio", 9.81);
 		Atleta atleta10 = new Atleta("Javier", 9.85);
+		Atleta atleta12 = new Atleta("Karla", 9.79);
+		Atleta atleta13 = new Atleta("Laura", 9.85);
 
 		// Agrego los atletas a la competencia
 		carrera2.agregarParticipantes(atleta6);
@@ -71,6 +73,8 @@ public class Test {
 		carrera2.agregarParticipantes(atleta8);
 		carrera2.agregarParticipantes(atleta9);
 		carrera2.agregarParticipantes(atleta10);
+		carrera2.agregarParticipantes(atleta12);
+		carrera2.agregarParticipantes(atleta13);
 
 		//Muestro los atletas que participan en la competencia
 		for (Atleta participantes : carrera2.getAtletasConcursantes()) {
@@ -87,7 +91,7 @@ public class Test {
 		ArrayList<Atleta> ganadores2 = carrera2.getTernaGanadores();
 		
 		System.out.println("Terna de ganadores");
-		for (int i = 0; i < ganadores2.size(); i++) {
+		for (int i = 0; i < 3; i++) {
 			System.out.println("El atleta: " + ganadores2.get(i).getNombre() + " termino la competencia con tiempo: " + ganadores2.get(i).getTiempo() + " y obtuvo el puesto numero: " + (i+1));
 		}
 		System.out.println();
