@@ -31,8 +31,9 @@ public class Empleado {
 	}
 	
 	public String toString() {
-		return "[Nombre=" + nombre + ", edad=" + edad + "]";
-	}	
+		return "Nombre=" + nombre + ", edad=" + edad ;
+	}
+	
 	public float calcularPago() {
 		return 0.0f; 
 	}

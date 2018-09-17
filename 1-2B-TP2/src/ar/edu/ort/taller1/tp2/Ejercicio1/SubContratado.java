@@ -8,16 +8,26 @@ public class SubContratado extends Empleado {
 		super();
 	}
 	
-	public SubContratado (String Nombre, int edad, float cantHoras, float precioHora) {
-		super(Nombre, edad);
+	public SubContratado (String nombre, int edad, float cantHoras, float precioHora) {
+		super(nombre, edad);
 		this.cantHoras = cantHoras;
 		this.precioHora = precioHora;
 	}
 	
+	public float getCantHoras() {
+		return cantHoras;
+	}
+	
+	public float getPrecioHora() {
+		return precioHora;
+	}
+	
 	@Override
 	public String toString() {
-		return "[Nombre=" + super.getNombre() + ", edad=" + super.getEdad() + " Cantidad Horas: " + this.cantHoras + " Precio Hora: " + this.precioHora + "]";
+		return super.toString() + " Cantidad Horas: " + this.cantHoras + " Precio Hora: " + this.precioHora;
 	}
+	
+	@Override
 	public float calcularPago() {
 		return precioHora * cantHoras;
 	}
