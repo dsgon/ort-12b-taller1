@@ -30,19 +30,34 @@ public class Test {
 		Electrodomestico licuadora2 = new Licuadora("TopHouse", "TP2V", 
 				"TP2V-0001", "220", "apagado", 1000, "20W", "2");
 		
+		inventario.add(heladera1);
+		inventario.add(heladera2);
+		inventario.add(tv1);
+		inventario.add(tv2);
+		inventario.add(lavarropa1);
+		inventario.add(lavarropa2);
+		inventario.add(licuadora1);
+		inventario.add(licuadora2);
+		
 		//Programa
-		System.out.println("Seleccione un tipo de producto: '1' para 'TV', "
-				+ "'2' para 'Heladera', '3' para 'Lavarropa', '4' para 'Licuadora' o '0' para 'Finalizar'");
 		int option = validarOpcion();
 		
 		while(option!=0) {
 			switch (option) {
 			case 1:
+				System.out.println("opcion 1");
+				for (Electrodomestico electrodomestico : inventario) {
+					if (electrodomestico instanceof Televisor) {
+						System.out.println("Televisor: "+ electrodomestico.getInfo());
+					}
+				}
 				break;
 
 			default:
 				break;
 			}
+			System.out.println();
+			option = validarOpcion();
 		}
 		
 		System.out.println("Fin de la comunicacion");
@@ -51,6 +66,8 @@ public class Test {
 	}
 	
 	private static int validarOpcion() {
+		System.out.println("Seleccione un tipo de producto: '1' para 'TV', "
+				+ "'2' para 'Heladera', '3' para 'Lavarropa', '4' para 'Licuadora' o '0' para 'Finalizar'");
 		int option = input.nextInt();
 		while (option < 0 || option >4) {
 			System.out.println("Ingrese una opcion valida");

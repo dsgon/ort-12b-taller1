@@ -26,6 +26,8 @@ public abstract class Electrodomestico {
 				+ voltaje + ", Estado=" + estado + ", Precio=" + precio;
 	}
 	
-	
+	public String getInfo() {
+		return "Marca=" + marca + ", Modelo=" + modelo ;
+	}
 
 }
