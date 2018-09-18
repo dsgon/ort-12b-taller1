@@ -10,6 +10,13 @@ public class Heladera extends Electrodomestico {
 		super(marca, modelo, numeroSerie, voltaje, encendido, precio);
 		this.capacidad = capacidad;
 		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" Capacidad=" + capacidad + ", Tipo=" + tipo;
 	}	
+	
+	
 	
 }

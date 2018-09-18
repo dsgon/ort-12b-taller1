@@ -11,5 +11,12 @@ public class Televisor extends Electrodomestico{
 		this.dimension = dimension;
 		this.tipo = tipo;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" Dimension=" + dimension + ", Tipo=" + tipo;
+	}
+	
+	
 	
 }

@@ -20,4 +20,12 @@ public abstract class Electrodomestico {
 		this.precio = precio;
 	}
 
+	@Override
+	public String toString() {
+		return "Marca=" + marca + ", Modelo=" + modelo + ", Nmero de Serie=" + numeroSerie + ", Voltaje="
+				+ voltaje + ", Estado=" + estado + ", Precio=" + precio;
+	}
+	
+	
+
 }
