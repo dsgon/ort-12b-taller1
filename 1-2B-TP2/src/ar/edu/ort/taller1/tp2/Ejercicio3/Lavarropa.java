@@ -12,4 +12,20 @@ public class Lavarropa extends Electrodomestico {
 		this.tipo = tipo;
 	}
 	
+	@Override
+	public String getInfo() {
+		return "Lavarropa: "+super.getInfo();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+" Capacidad =" + this.capacidad + ", Tipo =" + this.tipo;
+	}
+	
+	@Override
+	public String getTicketInfo() {
+		return "Lavarropas "+super.getMarca()+" "+this.tipo+", carga maxima "+this.capacidad+" Kg, modelo"
+	+super.getModelo()+": $"+getPrecio();
+	}
+	
 }

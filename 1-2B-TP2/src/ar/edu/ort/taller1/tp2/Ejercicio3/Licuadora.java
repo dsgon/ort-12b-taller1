@@ -12,4 +12,20 @@ public class Licuadora extends Electrodomestico{
 		this.velocidades = velocidades;
 	}
 	
+	@Override
+	public String getInfo() {
+		return "Licuadora: "+super.getInfo();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+" Potencia =" + this.potencia + ", Velocidades =" + this.velocidades;
+	}
+	
+	@Override
+	public String getTicketInfo() {
+		return "Lavarropas "+super.getMarca()+", potencia "+this.potencia+"w, modelo"
+	+super.getModelo()+" velocidades "+this.velocidades+": $"+getPrecio();
+	}
+	
 }

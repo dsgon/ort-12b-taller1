@@ -19,15 +19,31 @@ public abstract class Electrodomestico {
 		this.estado = encendido;
 		this.precio = precio;
 	}
-
-	@Override
-	public String toString() {
-		return "Marca=" + marca + ", Modelo=" + modelo + ", Nmero de Serie=" + numeroSerie + ", Voltaje="
-				+ voltaje + ", Estado=" + estado + ", Precio=" + precio;
-	}
 	
 	public String getInfo() {
-		return "Marca=" + marca + ", Modelo=" + modelo ;
+		return "Marca = " + marca + ", Modelo = " + modelo ;
+	}
+	
+	public String getMarca() {
+		return this.marca;
+	}
+	
+	public String getModelo() {
+		return this.modelo;
+	}
+	
+	public float getPrecio() {
+		return this.precio;
+	}
+	
+	@Override
+	public String toString() {
+		return "Marca=" + this.marca + ", Modelo=" + this.modelo + ", Nmero de Serie=" + this.numeroSerie + ", Voltaje="
+				+ this.voltaje + ", Estado=" + this.estado + ", Precio=" + this.precio;
+	}
+	
+	public String getTicketInfo() {
+		return "Marca=" + this.marca + ", Modelo=" + this.modelo + ", Precio=" + this.precio;
 	}
 
 }

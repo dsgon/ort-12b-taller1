@@ -14,9 +14,18 @@ public class Heladera extends Electrodomestico {
 
 	@Override
 	public String toString() {
-		return super.toString()+" Capacidad=" + capacidad + ", Tipo=" + tipo;
+		return super.toString()+" Capacidad=" + this.capacidad + ", Tipo=" + this.tipo;
 	}	
 	
+	@Override
+	public String getInfo() {
+		return "Heladera: "+super.getInfo();
+	}
 	
+	@Override
+	public String getTicketInfo() {
+		return "Heladera "+super.getMarca()+", modelo "+super.getModelo()+", "
+	+this.tipo+", capacidad "+this.capacidad+" litros: $"+super.getPrecio();
+	}
 	
 }

@@ -39,32 +39,103 @@ public class Test {
 		inventario.add(licuadora1);
 		inventario.add(licuadora2);
 		
+		ArrayList<Electrodomestico> itemsVendidos = new ArrayList<Electrodomestico>();
+		
 		//Programa
 		int option = validarOpcion();
 		
 		while(option!=0) {
+			ArrayList<Electrodomestico> productos = new ArrayList<Electrodomestico>();
 			switch (option) {
 			case 1:
-				System.out.println("opcion 1");
-				for (Electrodomestico electrodomestico : inventario) {
-					if (electrodomestico instanceof Televisor) {
-						System.out.println("Televisor: "+ electrodomestico.getInfo());
-					}
-				}
+				System.out.println("** Televisores **");
+				productos = getProductosTipo(inventario, option);
+				mostrarInfo(productos);
 				break;
-
+			case 2:
+				System.out.println("** Heladeras **");
+				productos = getProductosTipo(inventario, option);
+				mostrarInfo(productos);
+				break;
+			case 3:
+				System.out.println("** Lavarropas **");
+				productos = getProductosTipo(inventario, option);
+				mostrarInfo(productos);
+				break;
 			default:
+				System.out.println("** Licuadoras **");
+				productos = getProductosTipo(inventario, option);
+				mostrarInfo(productos);
 				break;
+			}
+			
+			System.out.println("Escriba la marca que desea comprar o escriba 'Menu' para volver al menu Principal");
+			String marca = input.next();
+			
+			if (!marca.equals("Menu")) {
+				Electrodomestico item = getProducto(productos, option, marca);
+				switch (option) {
+				case 1:
+					Televisor itemTv = (Televisor) item;
+					itemTv.toString();
+					break;
+				case 2:
+					Heladera itemHeladera = (Heladera) item;
+					itemHeladera.toString();
+					break;
+				case 3:
+					Lavarropa itemLavarropa = (Lavarropa) item;
+					itemLavarropa.toString();
+					break;
+				default:
+					Licuadora itemLicuadora = (Licuadora) item;
+					itemLicuadora.toString();
+					break;
+				}
+				itemsVendidos.add(item);
 			}
 			System.out.println();
 			option = validarOpcion();
 		}
 		
+		if (itemsVendidos.size()==0) {
+			System.out.println("No se escogieron productos para comprar");
+		} else {
+			mostrarTicket(itemsVendidos);
+		}
 		System.out.println("Fin de la comunicacion");
 		
 
 	}
 	
+	private static void mostrarTicket(ArrayList<Electrodomestico> itemsVendidos) {
+		for (Electrodomestico item : itemsVendidos) {
+			System.out.println(item.getTicketInfo());
+		}
+	}
+
+	private static void mostrarInfo(ArrayList<Electrodomestico> productos) {
+		for (Electrodomestico producto : productos) {
+			System.out.println(producto.getInfo());
+		}
+	}
+
+	private static Electrodomestico getProducto (ArrayList<Electrodomestico> inventario, int option, String marca) {
+		ArrayList<Electrodomestico> items = getProductosTipo(inventario, option);
+		boolean result = true;
+		while(result) {
+			for (Electrodomestico item : items) {
+				if(item.getMarca().equals(marca)) {
+					return item;
+				} 
+			}
+			System.out.println("No hay ningun producto con esa Marca, verifique de nuevo");
+			System.out.println("Escriba la marca que desea comprar correctamente");
+			marca = input.next();
+		}
+		return null;
+	}
+
 	private static int validarOpcion() {
 		System.out.println("Seleccione un tipo de producto: '1' para 'TV', "
 				+ "'2' para 'Heladera', '3' para 'Lavarropa', '4' para 'Licuadora' o '0' para 'Finalizar'");
@@ -74,6 +145,43 @@ public class Test {
 			option = input.nextInt();
 		}
 		return option;
+	}
+	
+	private static ArrayList<Electrodomestico> getProductosTipo(ArrayList<Electrodomestico> inventario, int prod) {
+		ArrayList<Electrodomestico> productosMostrados = new ArrayList<Electrodomestico>();
+		
+		switch (prod) {
+		case 1:
+			for (Electrodomestico electrodomestico : inventario) {
+				if (electrodomestico instanceof Televisor) {
+					productosMostrados.add(electrodomestico);
+				}
+			}
+			break;
+		case 2:
+			for (Electrodomestico electrodomestico : inventario) {
+				if (electrodomestico instanceof Heladera) {
+					productosMostrados.add(electrodomestico);
+				}
+			}
+			break;
+		case 3:
+			for (Electrodomestico electrodomestico : inventario) {
+				if (electrodomestico instanceof Lavarropa) {
+					productosMostrados.add(electrodomestico);
+				}
+			}
+			break;
+		default:
+			for (Electrodomestico electrodomestico : inventario) {
+				if (electrodomestico instanceof Licuadora) {
+					productosMostrados.add(electrodomestico);
+				}
+			}
+			break;
+		}
+		return productosMostrados;
+
 	}
 
 }

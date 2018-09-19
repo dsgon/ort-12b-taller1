@@ -17,6 +17,15 @@ public class Televisor extends Electrodomestico{
 		return super.toString()+" Dimension=" + dimension + ", Tipo=" + tipo;
 	}
 	
+	@Override
+	public String getInfo() {
+		return "Televisor: "+super.getInfo();
+	}
 	
+	@Override
+	public String getTicketInfo() {
+		return "Televisor "+this.tipo+" "+super.getMarca()+" "+this.dimension+", modelo "
+	+super.getModelo()+": $"+super.getPrecio();
+	}
 	
 }
