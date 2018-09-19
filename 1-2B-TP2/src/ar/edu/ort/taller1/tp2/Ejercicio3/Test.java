@@ -103,15 +103,18 @@ public class Test {
 		} else {
 			mostrarTicket(itemsVendidos);
 		}
-		System.out.println("Fin de la comunicacion");
-		
 
 	}
 	
 	private static void mostrarTicket(ArrayList<Electrodomestico> itemsVendidos) {
+		float total = 0;
+		System.out.println();
+		System.out.println("Ticket de Venta");
 		for (Electrodomestico item : itemsVendidos) {
 			System.out.println(item.getTicketInfo());
+			total += item.getPrecio();
 		}
+		System.out.println("Total: $"+total);
 	}
 
 	private static void mostrarInfo(ArrayList<Electrodomestico> productos) {
