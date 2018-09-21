@@ -5,31 +5,19 @@ public class Animal {
 	private int peso;
 	private int tamanio;
 	private ArrayList<Habilidad> habilidades;
-	private Entrenador entrenador;
+	private String claseDeAlimento;
 	
-	//Constructor de Alimento
-	public Animal (String nombre, int peso) {
-		this.nombre = nombre;
-		this.peso = peso;
-	}
+	
 	
 	//Constructor de Animal no-Delfin
-	public Animal (String nombre, int peso, int tamanio) {
+	public Animal (String nombre, int peso, int tamanio, String alimento) {
 		this.nombre = nombre;
 		this.peso = peso;
 		this.tamanio = tamanio;
+		this.claseDeAlimento = alimento;
 		habilidades = new ArrayList<Habilidad>();
 	}
 	
-	//Constructor de Delfin
-	public Animal (String nombre, int peso, int tamanio, Entrenador entrenador)
-	{
-		this.nombre = nombre;
-		this.peso = peso;
-		this.tamanio = tamanio;
-		habilidades = new ArrayList<Habilidad>();
-		this.entrenador = entrenador;
-	}
 	public void agregarHabilidad(Habilidad habilidad) {
 		habilidades.add(habilidad);
 	}
@@ -45,6 +33,19 @@ public class Animal {
 	}
 	public void setPeso(int peso) {
 		this.peso = peso;
+	}
+	
+	public void realizarTruco(String nombreTruco, Alimento alimento) {
+		boolean realizado = false;
+		int i = 0;
+		if (nombreTruco != "") {
+			while (realizado = false && i < habilidades.size()) {
+				if (habilidades.get(i).getNombre().equals(nombreTruco)) {
+					realizado = habilidades.get(i).ejecutarHabilidad(alimento);
+				}
+			i++;
+			}
+		}
 	}
 	
 }
