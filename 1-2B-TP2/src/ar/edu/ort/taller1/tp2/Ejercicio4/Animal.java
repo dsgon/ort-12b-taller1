@@ -5,16 +5,11 @@ public class Animal {
 	private int peso;
 	private int tamanio;
 	private ArrayList<Habilidad> habilidades;
-	private String claseDeAlimento;
 	
-	
-	
-	//Constructor de Animal no-Delfin
 	public Animal (String nombre, int peso, int tamanio, String alimento) {
 		this.nombre = nombre;
 		this.peso = peso;
 		this.tamanio = tamanio;
-		this.claseDeAlimento = alimento;
 		habilidades = new ArrayList<Habilidad>();
 	}
 	
@@ -34,18 +29,11 @@ public class Animal {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	
-	public void realizarTruco(String nombreTruco, Alimento alimento) {
-		boolean realizado = false;
-		int i = 0;
-		if (nombreTruco != "") {
-			while (realizado = false && i < habilidades.size()) {
-				if (habilidades.get(i).getNombre().equals(nombreTruco)) {
-					realizado = habilidades.get(i).ejecutarHabilidad(alimento);
-				}
-			i++;
-			}
-		}
+	public Habilidad getHabilidad(int numero) {
+		return habilidades.get(numero);
+	}
+	public int cantidadHabilidades(){
+		return habilidades.size();
 	}
 	
 }

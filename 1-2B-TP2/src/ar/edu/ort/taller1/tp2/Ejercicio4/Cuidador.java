@@ -10,9 +10,16 @@ public class Cuidador extends Empleado {
 		animalesACargo = new ArrayList<Animal>();
 		this.animalesMaxACargo = animalesMaxACargo;
 	}
-	public void AgregarAnimalACargo (Animal animal) {
+	public Boolean AgregarAnimalACargo (Animal animal) {
 		if (animalesMaxACargo < animalesACargo.size()) {
 			animalesACargo.add(animal);
+			return true;
 		}
+		else {
+			return false;
+		}
+	}
+	public Boolean alimentarAnimal (Alimento alimento, int alimentoAConsumir) {
+		return alimento.consumirAlimento(alimentoAConsumir);
 	}
 }

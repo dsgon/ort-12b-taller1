@@ -1,13 +1,11 @@
 package ar.edu.ort.taller1.tp2.Ejercicio4;
 
-public class Delfin extends Animal {
-	private final String claseDeAlimento = "Pulpo";
-	private Entrenador entrenador;
-	public Delfin(String nombre, int peso, int tamanio,String alimento, Entrenador entrenador) {
+public class LoboMarino extends Animal {
+	private final String claseDeAlimento = "Cangrejo";
+	public LoboMarino(String nombre, int peso, int tamanio,String alimento) {
 		super(nombre,peso,tamanio,alimento);
-		this.entrenador = entrenador;
+		
 	}
-	
 	public void realizarTruco(String nombreTruco, Alimento alimento) {
 		boolean realizado = false, fallo = false;
 		int i = 0;
