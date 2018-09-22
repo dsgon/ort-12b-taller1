@@ -15,8 +15,8 @@ public class Habilidad {
 	public int getCosteAlimento() {
 		return this.costeAlimento;
 	}
-	public boolean ejecutarHabilidad(Alimento alimento) {
-		if (alimento.consumirAlimento(costeAlimento) == true) {
+	public boolean ejecutarHabilidad(Cuidador cuidador, String claseDeAlimento) {
+		if (cuidador.consultarAlimento(claseDeAlimento, this.costeAlimento)) {
 			return true;
 		}
 		else

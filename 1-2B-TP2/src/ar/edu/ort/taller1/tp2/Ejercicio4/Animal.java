@@ -5,6 +5,7 @@ public class Animal {
 	private int peso;
 	private int tamanio;
 	private ArrayList<Habilidad> habilidades;
+	private Cuidador cuidador;
 	
 	public Animal (String nombre, int peso, int tamanio, String alimento) {
 		this.nombre = nombre;
@@ -12,7 +13,12 @@ public class Animal {
 		this.tamanio = tamanio;
 		habilidades = new ArrayList<Habilidad>();
 	}
-	
+	public void asignarCuidador (Cuidador cuidador) {
+		this.cuidador = cuidador;
+	}
+	public Cuidador getCuidador () {
+		return this.cuidador;
+	}
 	public void agregarHabilidad(Habilidad habilidad) {
 		habilidades.add(habilidad);
 	}
