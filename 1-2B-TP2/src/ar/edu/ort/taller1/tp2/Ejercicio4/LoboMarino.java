@@ -8,7 +8,7 @@ public class LoboMarino extends Animal {
 	
 	@Override
 	public void realizarTruco(String nombreTruco, Alimento alimento) {
-		boolean realizado = false, fallo = false;
+		boolean realizado = false;
 		int i = 0;
 		if (nombreTruco != "") {
 			while (realizado == false && i < super.cantidadHabilidades()) {
