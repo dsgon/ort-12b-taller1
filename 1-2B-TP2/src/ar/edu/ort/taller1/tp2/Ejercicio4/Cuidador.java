@@ -1,7 +1,9 @@
 package ar.edu.ort.taller1.tp2.Ejercicio4;
+
 import java.util.ArrayList;
 
 public class Cuidador extends Empleado {
+	
 	private int animalesMaxACargo;
 	private ArrayList<Animal> animalesACargo;
 	
@@ -11,21 +13,20 @@ public class Cuidador extends Empleado {
 		this.animalesMaxACargo = animalesMaxACargo;
 	}
 	
-	
 	public Boolean AgregarAnimalACargo (Animal animal) {
-		if (animalesMaxACargo < animalesACargo.size()) {
+		if (animalesACargo.size() < animalesMaxACargo  ) {
 			animalesACargo.add(animal);
 			return true;
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 	
-	
-	public Boolean consultarAlimento (String claseDeAlimento, int alimentoAConsumir) {
-		if () {
-			
+	public Boolean consultarAlimento (Alimento alimento, int alimentoAConsumir) {
+		if (alimento.getStock() > alimentoAConsumir){
+			alimento.descontarStock(alimentoAConsumir);
+			return true;
 		}
+		return false;
 	}
+	
 }

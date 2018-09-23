@@ -2,32 +2,30 @@ package ar.edu.ort.taller1.tp2.Ejercicio4;
 
 public class Alimento {
 	
-	private String nombre;
-	private int pesoActual;
+	private TIPO_ALIMENTO tipo;
+	private int stock;
 
 	
-	public Alimento (String nombre, int peso) {
-		this.nombre = nombre;
-		this.pesoActual = peso;
+	public Alimento (TIPO_ALIMENTO tipo, int cantidad) {
+		this.tipo = tipo;
+		this.stock = cantidad;
 	}
 	
-	public int getPeso () {
-		return this.pesoActual;
+	public int getStock () {
+		return this.stock;
 	}
 	
 	
-	public String getNombre () {
-		return this.nombre;
+	public TIPO_ALIMENTO getTipo () {
+		return this.tipo;
 	}
 	
-	public boolean consumirAlimento (int peso) {
-		if (this.pesoActual - peso > 0) {
-			this.pesoActual -= peso;
+	public boolean descontarStock (int peso) {
+		if (this.stock - peso > 0) {
+			this.stock -= peso;
 			return true;
 		}
-		else {
-			return false;
-		}
-		
+		return false;
 	}
+	
 }

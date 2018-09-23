@@ -1,35 +1,27 @@
 package ar.edu.ort.taller1.tp2.Ejercicio4;
 
 public class LoboMarino extends Animal {
-	private final String claseDeAlimento = "Cangrejo";
-	public LoboMarino(String nombre, int peso, int tamanio,String alimento) {
-		super(nombre,peso,tamanio,alimento);
-		
+	
+	public LoboMarino(String nombre, int peso, int tamanio) {
+		super(nombre,peso,tamanio,TIPO_ALIMENTO.CANGREJO);
 	}
+	
+	@Override
 	public void realizarTruco(String nombreTruco, Alimento alimento) {
 		boolean realizado = false, fallo = false;
 		int i = 0;
 		if (nombreTruco != "") {
-			while (realizado = false && i < super.cantidadHabilidades()) {
+			while (realizado == false && i < super.cantidadHabilidades()) {
 				if (super.getHabilidad(i).getNombre().equals(nombreTruco)) {
-					if (alimento.getNombre().equals(claseDeAlimento)) {
-						fallo = super.getHabilidad(i).ejecutarHabilidad(alimento);
-					}
-					else {
-						System.out.println("ERROR: No es la clase de alimento que consume el animal");
-						fallo = false;
-					}
-					if (fallo = false) {
-						System.out.println(this.getClass() + "se le ordeno realizar " + super.getHabilidad(i).getNombre() + " ,pero no tiene suficiente alimento");
-					}
-					else
-					{
-						System.out.println(this.getClass() + " " + super.getNombre() + ", realizo " + super.getHabilidad(i).getNombre() + ", recibio " + super.getHabilidad(i).getCosteAlimento() + " kg de " + alimento.getNombre());
-					}
-					realizado = true;
+					realizado = super.getHabilidad(i).ejecutarHabilidad(super.getCuidador(), alimento);
+					break;
 				}
-			i++;
+				i++;
 			}
+			if (!realizado)
+				System.out.println("Lobo Marino "+super.getNombre()+" se le ordeno realizar " + super.getHabilidad(i).getNombre() + " ,pero no tiene suficiente alimento");
+			else
+				System.out.println("Lobo Marino " + super.getNombre() + ", realizo " + super.getHabilidad(i).getNombre() + ", recibio " + super.getHabilidad(i).getCosteAlimento() + " kg de " + alimento.getTipo());
 		}
 	}
 }
