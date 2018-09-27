@@ -1,0 +1,13 @@
+Ejercicio 5 OPCIONAL
+Una organización de torneos de futbol tiene 3 tipos de torneos: de futbol 5, de futbol 8 y de futbol 11.
+En cada torneo, los equipos que se inscriban no pueden superar la cantidad de jugadores permitidas en el
+torneo.
+Crear la clase Partido que contenga 4 atributos: uno para el equipo local, otro para el equipo visitante, otro
+para los goles del equipo local y por último uno para los goles del equipo visitante.
+Ademas, crear la clase Jornada que contenga una lista de Partidos. La clase torneo será responsable de llevar
+el control de sus Jornadas.
+Al cabo de finalizar la Jornada, se deberá actualizar los puntos de cada equipo. Tambien se deberá mostrar la
+tabla de posiciones indicando cada equipo y su puntaje:
+
+< Ver Tabla en archivo PDF >
+
