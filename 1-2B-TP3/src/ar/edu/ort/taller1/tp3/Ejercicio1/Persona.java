@@ -3,6 +3,7 @@ package ar.edu.ort.taller1.tp3.Ejercicio1;
 import java.util.ArrayList;
 
 import ar.edu.ort.taller1.tp3.Ejercicio2.Mascota;
+import ar.edu.ort.taller1.tp3.Ejercicio3.Hito;
 
 public class Persona {
 	
@@ -11,6 +12,7 @@ public class Persona {
 	private ArrayList<NumeroTelefonico> telefonos;
 	private ArrayList<Email> emails;
 	private ArrayList<Mascota> mascotas;
+	private ArrayList<Hito> hitos;
 	
 	
 	public Persona (String nombre, String apellido) {
@@ -19,6 +21,7 @@ public class Persona {
 		telefonos = new ArrayList<NumeroTelefonico>();
 		emails = new ArrayList<Email>();
 		mascotas = new ArrayList<Mascota>();
+		hitos = new ArrayList<Hito>();
 	}
 	
 	public void mostrarTodo() {
@@ -35,6 +38,13 @@ public class Persona {
 		for (Mascota mascota : mascotas) {
 			System.out.println(mascota.getTipo()+", "+mascota.getNombre());
 		}
+		System.out.println("Hitos:");
+		for (Hito hito : hitos) {
+			System.out.println(hito.getFecha()+" - "+hito.getDescripcion()+" y estuve con:");
+			for (Persona  persona : hito.getPersonasInvolucradas()){
+				System.out.println(persona.nombre+" "+persona.apellido);
+			}
+		}
 	}
 	
 	public void agregarNumeroTelefonico(int codPais, int caracteristica, int numero, TipoDeLinea tipo) {
@@ -47,6 +57,14 @@ public class Persona {
 	
 	public void agregarMascota(String nombre, String tipo) {
 		mascotas.add(new Mascota(nombre, tipo));
+	}
+	
+	public void agregarHito(String fecha, String descripcion, ArrayList<Persona> personasInvolucradas){
+		Hito hito = new Hito (fecha, descripcion);
+		hitos.add(hito);
+		for (Persona persona : personasInvolucradas) {
+			hito.agregarPersonasInvolucradas(persona);
+		}
 	}
 
 }
