@@ -24,6 +24,8 @@ public class Persona {
 		hitos = new ArrayList<Hito>();
 	}
 	
+	public String getNombre() { return this.nombre; }
+	
 	public void mostrarTodo() {
 		System.out.println(this.apellido+", "+this.nombre);
 		System.out.println("Telefonos:");
@@ -42,7 +44,8 @@ public class Persona {
 		for (Hito hito : hitos) {
 			System.out.println(hito.getFecha()+" - "+hito.getDescripcion()+" y estuve con:");
 			for (Persona  persona : hito.getPersonasInvolucradas()){
-				System.out.println(persona.nombre+" "+persona.apellido);
+				if(!persona.getNombre().equals(this.nombre)) 
+					System.out.println(persona.nombre+" "+persona.apellido);
 			}
 		}
 	}
@@ -62,6 +65,7 @@ public class Persona {
 	public void agregarHito(String fecha, String descripcion, ArrayList<Persona> personasInvolucradas){
 		Hito hito = new Hito (fecha, descripcion);
 		hitos.add(hito);
+		hito.agregarPersonasInvolucradas(this);
 		for (Persona persona : personasInvolucradas) {
 			hito.agregarPersonasInvolucradas(persona);
 		}
