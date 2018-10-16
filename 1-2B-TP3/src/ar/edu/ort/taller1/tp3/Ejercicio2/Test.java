@@ -1,24 +1,26 @@
 package ar.edu.ort.taller1.tp3.Ejercicio2;
 
 import ar.edu.ort.taller1.tp3.Ejercicio1.Persona;
-import ar.edu.ort.taller1.tp3.Ejercicio1.TipoDeLinea;
+import ar.edu.ort.taller1.tp3.Ejercicio1.TIPO_DE_LINEA;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
-		Persona p1 = new Persona("Kimi", "Raikkonen");
+		Persona p = new Persona("Mariana", "Carballal");
 		
-		p1.agregarNumeroTelefonico(54, 114111, 2222, TipoDeLinea.CELULAR);
-		p1.agregarNumeroTelefonico(68, 032444, 5678, TipoDeLinea.CELULAR);
-		p1.agregarNumeroTelefonico(54, 4411, 5472, TipoDeLinea.FIJO);
-		p1.agregarEmail("kimi@raikkonen.com");
-		p1.agregarEmail("kimi_newells@hotmail.com");
-		p1.agregarMascota("Pluto", "Perro");
-		p1.agregarMascota("Felix", "Gato");
-		p1.agregarMascota("Bugs", "Conejo");
+		p.agregarEmail("marianacarb@hotmail.com");
+		p.agregarEmail("mariana.carballal@hotmail.com");
+		p.agregarEmail("guasuguasol1@gmail.com");
 		
-		p1.mostrarTodo();
+		p.agregarTelefono(11, 35871648, 54, TIPO_DE_LINEA.CELULAR);
+		p.agregarTelefono(237, 4629893, 54, TIPO_DE_LINEA.FIJO);
+		
+		p.agregarMascota("sammy", "perro");
+		p.agregarMascota("pirata", "gato");
+		p.agregarMascota("lionel andres", "tortuga");
+		
+		p.mostrarTodo();
 
 	}
 

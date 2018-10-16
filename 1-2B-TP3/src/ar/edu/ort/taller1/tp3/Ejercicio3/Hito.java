@@ -31,5 +31,4 @@ public class Hito {
 	public ArrayList<Persona> getPersonasInvolucradas(){
 		return this.personasInvolucradas;
 	}
-
 }

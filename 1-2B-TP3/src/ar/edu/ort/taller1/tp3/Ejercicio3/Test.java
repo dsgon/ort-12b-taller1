@@ -3,34 +3,39 @@ package ar.edu.ort.taller1.tp3.Ejercicio3;
 import java.util.ArrayList;
 
 import ar.edu.ort.taller1.tp3.Ejercicio1.Persona;
-import ar.edu.ort.taller1.tp3.Ejercicio1.TipoDeLinea;
+import ar.edu.ort.taller1.tp3.Ejercicio1.TIPO_DE_LINEA;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
-		Persona p1 = new Persona("Kimi", "Raikkonen");
+		Persona p = new Persona("Mariana", "Carballal");
 		
-		ArrayList<Persona> team = new ArrayList<Persona>();
-		team.add(new Persona ("Felipe", "Massa"));
-		team.add(new Persona ("Jean", "Todt"));
+		p.agregarEmail("marianacarb@hotmail.com");
+		p.agregarEmail("mariana.carballal@hotmail.com");
+		p.agregarEmail("guasuguasol1@gmail.com");
 		
-		ArrayList<Persona> team2 = new ArrayList<Persona>();
-		team2.add(new Persona ("Romain", "Grosjean"));
-		team2.add(new Persona ("Eric", "Boulier"));
+		p.agregarTelefono(11, 35871648, 54, TIPO_DE_LINEA.CELULAR);
+		p.agregarTelefono(237, 4629893, 54, TIPO_DE_LINEA.FIJO);
 		
-		p1.agregarNumeroTelefonico(54, 114111, 2222, TipoDeLinea.CELULAR);
-		p1.agregarNumeroTelefonico(68, 032444, 5678, TipoDeLinea.CELULAR);
-		p1.agregarNumeroTelefonico(54, 4411, 5472, TipoDeLinea.FIJO);
-		p1.agregarEmail("kimi@raikkonen.com");
-		p1.agregarEmail("kimi_newells@hotmail.com");
-		p1.agregarMascota("Pluto", "Perro");
-		p1.agregarMascota("Felix", "Gato");
-		p1.agregarMascota("Bugs", "Conejo");
-		p1.agregarHito("21/10/2007", "Campeonato Mundial de F1", team);
-		p1.agregarHito("04/11/2012", "Victoria en Abu Dhabi", team2);
+		p.agregarMascota("sammy", "perro");
+		p.agregarMascota("pirata", "gato");
+		p.agregarMascota("lionel andres", "tortuga");
 		
-		p1.mostrarTodo();
+		ArrayList<Persona> amigos = new ArrayList<Persona>();
+		Persona p2 = new Persona("David", "Gonzalez");
+		Persona p3 = new Persona("Guillermo", "Antun");
+		amigos.add(p2);
+		amigos.add(p3);
+		
+		p.agregarHito("07/12/2009", "Victoria de Campeonato de Natacion", amigos);
+		
+		p.mostrarTodo();
+		
+		System.out.println("<<---------------------------------------->>");
+		p2.mostrarTodo();
+		System.out.println("<<---------------------------------------->>");
+		p3.mostrarTodo();
 
 	}
 
