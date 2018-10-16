@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.NumeroTelefonico" project="1-2B-TP3" 
-    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/NumeroTelefonico.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="221" x="91" y="428"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio3.Test" project="1-2B-TP3" 
-    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio3/Test.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="137" x="45" y="181"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.Email" project="1-2B-TP3" 
-    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/Email.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="137" x="-86" y="428"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="4" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.TipoDeLinea" project="1-2B-TP3" 
-    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/TipoDeLinea.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="138" x="91" y="657"/>    
+  <enumeration id="1" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.TIPO_DE_LINEA" project="1-2B-TP3" 
+    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/TIPO_DE_LINEA.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="155" x="225" y="692"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
+  <class id="2" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.Persona.EMail" project="1-2B-TP3" 
+    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/Persona.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="137" x="48" y="463"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.Persona.NumeroTelefonico" project="1-2B-TP3" 
+    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/Persona.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="238" x="225" y="463"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio3.Test" project="1-2B-TP3" 
+    file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio3/Test.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="137" x="48" y="90"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
   <class id="5" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio2.Mascota" project="1-2B-TP3" 
     file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio2/Mascota.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="137" x="352" y="428"/>    
+    <position height="135" width="137" x="503" y="463"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio3.Hito" project="1-2B-TP3" 
     file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio3/Hito.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="257" x="529" y="428"/>    
+    <position height="189" width="257" x="680" y="463"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="ar.edu.ort.taller1.tp3.Ejercicio1.Persona" project="1-2B-TP3" 
     file="/1-2B-TP3/src/ar/edu/ort/taller1/tp3/Ejercicio1/Persona.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="282" x="352" y="181"/>    
+    <position height="333" width="272" x="225" y="90"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -72,44 +72,52 @@
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="11">    
+  <nesting id="11">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <association id="12">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="12" name="mascotas"/>      
-      <multiplicity id="13" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="14">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="15" name="emails"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+      <attribute id="13" name="telefonos"/>      
+      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="17">    
+  <nesting id="15">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <association id="16">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="18" name="telefonos"/>      
-      <multiplicity id="19" minimum="0" maximum="2147483647"/>    
+      <attribute id="17" name="mascotas"/>      
+      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="20" name="tipoLinea"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="20">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="21" name="personasInvolucradas"/>      
-      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
+  <association id="22">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="23" name="emails"/>      
+      <multiplicity id="24" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="24" name="tipoDeLinea"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
+  <association id="25">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="26" name="personasInvolucradas"/>      
+      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
