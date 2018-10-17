@@ -14,9 +14,6 @@ public class Mueble {
 	
 	public String getMueble(){
 		return this.nombre + " de " + this.material + " color " + this.color;
-	}
-
-	
-	
+	}	
 
 }

@@ -16,5 +16,29 @@ public class Direccion {
 	public String getDireccion(){
 		return "Direccion: " + this.calle + " " + this.altura + " " + this.piso + "° " + this.departamento; 
 	}
+	
+	public String getPiso(){
+		return this.piso;
+	}
+	
+	public String getDepartamento(){
+		return this.departamento;
+	}
+	
+	public String getCalle(){
+		return this.calle;
+	}
+	
+	public String getAltura(){
+		return this.altura;
+	}
+	
+	public void setPiso(String piso) {
+		this.piso = piso;
+	}
+	
+	public void setDepartamento(String depto) {
+		this.departamento = depto;
+	}
 
 }
