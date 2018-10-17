@@ -35,11 +35,9 @@ public class Test {
 		
 		e.mostrarTodo();
 		
-		e.realizarMudanza("6", "a", "3", "b");
 		e.realizarMudanza("4", "c", "6", "a");
+		e.realizarMudanza("6", "a", "3", "b");
 		
 		e.mostrarTodo();
-		
 	}
-
 }

@@ -55,6 +55,16 @@ public class Edificio {
 			return this.personas;
 		}
 		
+		public void vaciarVivienda(){
+			getPersonas().clear();
+			getMuebles().clear();
+		}
+		
+		public void llenarVivienda(Vivienda o){
+			getPersonas().addAll(o.getPersonas());
+			getMuebles().addAll(o.getMuebles());
+		}
+		
 		public ArrayList<Mueble> getMuebles(){
 			return this.muebles;
 		}
@@ -100,22 +110,21 @@ public class Edificio {
 		Vivienda viviendaD = buscarVivienda(pisoD, deptoD);
 		
 		if (viviendaO!=null){
-			if (viviendaD!=null){
-				viviendaD.getPersonas().clear();
-				viviendaD.getPersonas().addAll(viviendaO.getPersonas());
-				viviendaD.getMuebles().clear();
-				viviendaD.getMuebles().addAll(viviendaO.getMuebles());
-				viviendaO.getPersonas().clear();
-				viviendaO.getMuebles().clear();
-			} else {
+			if (viviendaD!=null && viviendaD.getPersonas().isEmpty() && viviendaD.getMuebles().isEmpty()){
+				viviendaD.llenarVivienda(viviendaO);
+				viviendaO.vaciarVivienda();
+				System.out.println("Se ha realizado la mudanza de " + viviendaO.getNombre() + " a " + viviendaD.getNombre());
+			} 
+			else if (viviendaD!=null && (!viviendaD.getPersonas().isEmpty() || !viviendaD.getMuebles().isEmpty())) {
+				System.out.println("No se puede realizar la mudanza porque la " + viviendaD.getNombre() + " está ocupada.");
+			} 
+			else {
 				viviendaD = new Vivienda(pisoD, deptoD);
 				agregarVivienda(viviendaD);
-				viviendaD.getPersonas().addAll(viviendaO.getPersonas());
-				viviendaD.getMuebles().addAll(viviendaO.getMuebles());
-				viviendaO.getPersonas().clear();
-				viviendaO.getMuebles().clear();
+				viviendaD.llenarVivienda(viviendaO);
+				viviendaO.vaciarVivienda();
+				System.out.println("Se ha realizado la mudanza de " + viviendaO.getNombre() + " a " + viviendaD.getNombre());
 			}
-			System.out.println("Se ha realizado la mudanza de " + viviendaO.getNombre() + " a " + viviendaD.getNombre());
 		} else {
 			System.out.println("No se puede realizar la mudanza porque no existe la vivienda de origen.");
 		}
