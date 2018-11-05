@@ -10,7 +10,6 @@ public class Test {
 		Direccion d = new Direccion("Monroe", "2861");
 		Edificio e = new Edificio(d);
 		
-		
 		Persona p = new Persona("Mariana", "Carballal", 26);
 		Persona p2 = new Persona("David", "Gonzalez", 30);
 		Persona p3 = new Persona("Guillermo", "Antun", 28);
@@ -35,11 +34,9 @@ public class Test {
 		
 		e.mostrarTodo();
 		
-		e.realizarMudanza("6", "a", "3", "b");
 		e.realizarMudanza("4", "c", "6", "a");
+		e.realizarMudanza("6", "a", "3", "b");
 		
 		e.mostrarTodo();
-		
 	}
-
 }
