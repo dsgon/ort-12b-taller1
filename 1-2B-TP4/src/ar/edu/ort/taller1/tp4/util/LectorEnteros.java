@@ -3,6 +3,8 @@ package ar.edu.ort.taller1.tp4.util;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.management.OperationsException;
+
 public class LectorEnteros {
 	private static final String MENSAJE_ERROR_SCANNER_NULL = "Debe recibirse un Scanner.";
 	private static final String MENSAJE_ERROR_RANGO_NULL = "El rango no debe ser null.";
@@ -13,6 +15,8 @@ public class LectorEnteros {
 	private static final String MASCARA_MENSAJE_CARGA_ENTERO = "%s:";
 	private static final String MASCARA_MENSAJE_RANGO = "%s(entre %d y %d):";
 	private static final String MASCARA_MENSAJE_RANGO_CON_FIN = "%s (entre %d y %d, %d para abandonar la carga):";
+	
+	private static final String MASCARA_MENSAJE_DENTRO_DE_RANGO = "el valor %d esta dentro del rango(%d y %d)";  
 
 	private Scanner scanner;
 
@@ -27,12 +31,12 @@ public class LectorEnteros {
 		this.scanner = scanner;
 	}
 
-	public int pedir(String mensaje) throws InputMismatchException{
+	public int pedir(String mensaje){
 		int num = 0;
 		boolean ok = false;
+		System.out.println(mensaje);
 		while (!ok){
 			try {
-				System.out.println("Ingrese un numero entero: ");
 				num = scanner.nextInt();
 				ok = true;
 			} catch (InputMismatchException e){
@@ -43,37 +47,154 @@ public class LectorEnteros {
 		return num;
 	}
 
-	public int pedir(String mensaje, RangoDeEnteros rangoValido) throws...{
+	public int pedir(String mensaje, RangoDeEnteros rangoValido) {
 		int num = 0;
-		// Completar
+		boolean ok = false;
+		
+		if (mensaje==null){
+			mensaje = MENSAJE_CARGA_ENTERO;
+		}
+		System.out.println(mensaje);
+		while (!ok){
+			try {
+				num = scanner.nextInt();
+				ok = rangoValido.incluye(num);
+			} catch (InputMismatchException e){
+				System.out.println(mensaje);
+			} catch (NullPointerException np) {
+				System.out.println(MENSAJE_ERROR_RANGO_NULL);
+				break;
+			}
+			scanner.nextLine();
+		}
 		
 		return num;
 	}
 
-	public int pedir(String mensaje, int limiteA, int limiteB)  throws... {
-		// Completar
-		
-	}
-
-	public int pedir(String mensaje, RangoDeEnteros rango, int valorFinCarga) throws... {
+	public int pedir(String mensaje, int limA, int limB) {
+		boolean ok = false;
+		RangoDeEnteros rangoDeEnteros = null;
 		int num = 0;
-		// Completar
-		return num;
+		
+		try {
+			rangoDeEnteros = new RangoDeEnteros(limA, limB);
+		} catch (IllegalArgumentException e){
+			System.out.println(MENSAJE_ERROR_CARGA);
+		} 
+		
+		while(!ok) {
+			try {
+				System.out.println(String.format(MASCARA_MENSAJE_RANGO, mensaje,limA,limB));
+				num = scanner.nextInt();
+				if(!rangoDeEnteros.incluye(num))
+					throw new IllegalArgumentException();
+				ok = true;
+			} catch (IllegalArgumentException i) {
+				System.out.println(MENSAJE_FUERA_DE_RANGO);
+			} catch (InputMismatchException e){
+				System.out.println(MENSAJE_ERROR_CARGA);
+				scanner.next();
+			} catch (NullPointerException np) {
+				System.out.println(MENSAJE_ERROR_RANGO_NULL);
+			}
+		}
+		System.out.println(String.format(MASCARA_MENSAJE_DENTRO_DE_RANGO, 
+				num,
+				rangoDeEnteros.getLimiteInferior(),
+				rangoDeEnteros.getLimiteSuperior()));
+		return num;		
 	}
-// OPCIONALES 
+	
 	public int pedir() {
 		int num = 0;
-		// Completar
+		boolean result = false;
+		while(!result) {
+			System.out.println(MENSAJE_CARGA_ENTERO);
+			try {
+				num = scanner.nextInt();
+				result = true;
+			} catch (InputMismatchException e) {
+				System.out.println(MENSAJE_ERROR_CARGA);
+				scanner.next();
+			}
+		}
 		return num;
 	}
-	public int pedir(String mensaje, int limiteA, int limiteB, int valorFinCarga) throws... {
-		// Completar
-		return 
+	
+	
+	public int pedir(String mensaje, int limiteA, int limiteB, int valorFinCarga) {
+		boolean ok = false;
+		RangoDeEnteros rangoDeEnteros = null;
+		int num = 0;
+		
+		try {
+			rangoDeEnteros = new RangoDeEnteros(limiteA, limiteB);
+		} catch (IllegalArgumentException e){
+			System.out.println(MENSAJE_ERROR_CARGA);
+		}
+
+		while(!ok) {
+			try {
+				System.out.println(String.format(MASCARA_MENSAJE_RANGO_CON_FIN, mensaje,limiteA,limiteB,valorFinCarga));
+				num = scanner.nextInt();
+				while(num!=valorFinCarga) {
+					if(!rangoDeEnteros.incluye(num))
+						throw new IllegalArgumentException();
+					System.out.println(String.format(MASCARA_MENSAJE_RANGO_CON_FIN, mensaje,limiteA,limiteB,valorFinCarga));
+					num = scanner.nextInt();
+				}
+				throw new OperationsException();
+			} catch (IllegalArgumentException i) {
+				System.out.println(MENSAJE_FUERA_DE_RANGO);
+			} catch (InputMismatchException e){
+				System.out.println(MENSAJE_ERROR_CARGA);
+				scanner.next();
+			} catch (NullPointerException np) {
+				System.out.println(MENSAJE_ERROR_RANGO_NULL);
+			} catch (OperationsException oe) {
+				System.out.println("Fin");
+				ok = true;
+			}
+		}
+
+		return num;	
+	}
+	
+	public int pedir(String mensaje, RangoDeEnteros rango, int valorFinCarga){
+		boolean ok = false;
+		int num = 0;
+
+		while(!ok) {
+			try {
+				System.out.println(String.format(MASCARA_MENSAJE_RANGO_CON_FIN, mensaje,
+						rango.getLimiteInferior(),
+						rango.getLimiteSuperior(),
+						valorFinCarga));
+				num = scanner.nextInt();
+				while(num!=valorFinCarga) {
+					if(!rango.incluye(num))
+						throw new IllegalArgumentException();
+					System.out.println(String.format(MASCARA_MENSAJE_RANGO_CON_FIN, mensaje,
+							rango.getLimiteInferior(),
+							rango.getLimiteSuperior(),
+							valorFinCarga));
+					num = scanner.nextInt();
+				}
+				throw new OperationsException();
+			} catch (IllegalArgumentException i) {
+				System.out.println(MENSAJE_FUERA_DE_RANGO);
+			} catch (InputMismatchException e){
+				System.out.println(MENSAJE_ERROR_CARGA);
+				scanner.next();
+			} catch (NullPointerException np) {
+				System.out.println(MENSAJE_ERROR_RANGO_NULL);
+			} catch (OperationsException oe) {
+				System.out.println("Fin");
+				ok = true;
+			}
+		}
+
+		return num;	
 	}
 
-	public int pedir(String mensaje, RangoDeEnteros rango, int valorFinCarga)throws... {
-		int num = 0;
-		// Completar
-		return num;
-	}
 }
