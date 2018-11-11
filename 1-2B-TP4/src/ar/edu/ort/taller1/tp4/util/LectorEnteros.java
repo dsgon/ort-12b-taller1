@@ -59,6 +59,14 @@ public class LectorEnteros {
 			try {
 				num = scanner.nextInt();
 				ok = rangoValido.incluye(num);
+				if (!ok) {
+					throw new IllegalArgumentException();
+				}
+			} catch (IllegalArgumentException i) {
+				System.out.println(String.format(MASCARA_MENSAJE_RANGO, 
+						MENSAJE_FUERA_DE_RANGO,
+						rangoValido.getLimiteInferior(),
+						rangoValido.getLimiteSuperior()));
 			} catch (InputMismatchException e){
 				System.out.println(mensaje);
 			} catch (NullPointerException np) {
