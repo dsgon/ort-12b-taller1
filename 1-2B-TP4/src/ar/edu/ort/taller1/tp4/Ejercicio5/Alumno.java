@@ -3,7 +3,9 @@ package ar.edu.ort.taller1.tp4.Ejercicio5;
 import ar.edu.ort.taller1.tp4.util.*;
 
 public class Alumno extends Persona {
+	
 	public Alumno(String nombreCompleto, int dni, int anioNacimiento, RangoDeEnteros rango) {
+		
 		super(nombreCompleto, anioNacimiento, anioNacimiento);
 		if (nombreCompleto.equals(null) || nombreCompleto.isEmpty())
 			throw new IllegalArgumentException();

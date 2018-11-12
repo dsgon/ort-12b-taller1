@@ -1,6 +1,6 @@
 package ar.edu.ort.taller1.tp4;
 
-import tp1.tp4.util.RangoDeEnteros;
+import ar.edu.ort.taller1.tp4.util.RangoDeEnteros;
 
 public class Alumno extends Persona {
 	public static final RangoDeEnteros RANGO_NRO_DOCUMENTO = new RangoDeEnteros(1000000, 999999999);
@@ -15,11 +15,10 @@ public class Alumno extends Persona {
 		return numeroLegajo;
 	}
 
-	public void setNumeroLegajo(int numeroLegajo) throws IllegalArgumentException{
-		// Completar
-		
+	public void setNumeroLegajo(int numeroLegajo){
 		this.numeroLegajo = numeroLegajo;
 	}
+	
 	@Override
 	public String toString(){
 		String out="[nombreCompleto="+getNombreCompleto()+", numeroLegajo="+getNumeroLegajo()+", anioNacimiento="+getAnioNacimiento()+"]";
